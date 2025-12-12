@@ -1,0 +1,77 @@
+<h2 class="form-heading">Student Details Form</h2>
+
+<form [formGroup]="studentForm">
+  <!-- Name -->
+  <div class="form-group">
+    <label class="form-label">Name <span class="required">*</span></label>
+    <input class="form-input" type="text" formControlName="name" />
+    <div class="error" *ngIf="studentForm.get('name')?.touched && studentForm.get('name')?.invalid">
+      Minimum 5 characters required.
+    </div>
+  </div>
+
+  <!-- Class -->
+  <div class="form-group">
+    <label class="form-label">Class <span class="required">*</span></label>
+    <select class="form-input" formControlName="class">
+      <option value="">Select</option>
+      <option *ngFor="let c of classes" [value]="c">Class {{ c }}</option>
+    </select>
+    <div
+      class="error"
+      *ngIf="studentForm.get('class')?.touched && studentForm.get('class')?.invalid"
+    >
+      Required field.
+    </div>
+
+    <!-- Class messages -->
+    <p class="class-message" *ngIf="selectedClass == '9'">
+      You will appear in board exams soon. All the Best !!
+    </p>
+    <p class="class-message" *ngIf="selectedClass == '6'">Welcome to middle school!</p>
+    <p class="class-message" *ngIf="selectedClass && selectedClass != '6' && selectedClass != '9'">
+      Education and hobby go hand in hand!
+    </p>
+  </div>
+
+  <!-- Gender -->
+  <div class="form-group">
+    <label class="form-label">Gender <span class="required">*</span></label>
+
+    <div class="radio-group">
+      <label class="radio-option">
+        <input type="radio" formControlName="gender" value="Male" /> Male
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" formControlName="gender" value="Female" /> Female
+      </label>
+    </div>
+  </div>
+
+  <!-- Hobby -->
+  <div class="form-group checkbox">
+    <label> <input type="checkbox" formControlName="hasHobby" /> I have a hobby </label>
+  </div>
+  <div class="form-group" *ngIf="studentForm.get('hasHobby')?.value">
+    <label class="form-label">Hobby</label>
+    <input class="form-input" type="text" formControlName="hobby" />
+  </div>
+
+  <!-- Favorite Subject -->
+  <div class="form-group">
+    <label class="form-label">Favorite Subject</label>
+    <select class="form-input" formControlName="favoriteSubject">
+      <option value="">None</option>
+      <option>Math</option>
+      <option>Science</option>
+      <option>English</option>
+      <option>History</option>
+    </select>
+  </div>
+
+  <!-- Save Button -->
+  <button class="submit-btn" type="button" (click)="save()" [disabled]="studentForm.invalid">
+    Save
+  </button>
+</form>

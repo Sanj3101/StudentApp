@@ -1,0 +1,94 @@
+.form-heading {
+  text-align: center;
+}
+
+form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.class-message {
+  background: #e0f2fe;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  color: #0369a1;
+  font-size: 0.9rem;
+  border-left: 4px solid #0284c7;
+}
+
+.radio-group {
+  display: flex;
+  gap: 4rem;
+  margin-top: 0.5rem;
+}
+
+.radio-option,
+.checkbox label {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  background: #3b82f6;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.submit-btn:disabled {
+  background: #9dc2ff;
+  cursor: not-allowed;
+}
+
+.required {
+  color: #d32f2f;
+  font-weight: bold;
+}
